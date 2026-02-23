@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Password Strength Checker</title>
-  <link rel="stylesheet" href="https://omkhond1919.github.io/Password-strenght-checker/Style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -11,8 +11,8 @@
     <h2>Password Strength Checker</h2>
 
     <div class="password-box">
-      <input 
-        type="password" 
+      <input
+        type="password"
         id="password"
         placeholder="Enter password"
         onkeyup="checkStrength()"
@@ -20,14 +20,18 @@
       <span id="toggle" onclick="togglePassword()">Show</span>
     </div>
 
-    <!-- Strength Bar -->
+    <button class="generate-btn" onclick="generatePassword()">
+      ⚡ Generate Strong Password
+    </button>
+
     <div class="strength-bar">
       <div class="strength-level" id="strengthLevel"></div>
     </div>
 
     <p class="strength-text" id="strengthText">Strength: —</p>
+    <p class="entropy-text" id="entropyText">Entropy: —</p>
+    <p class="crack-text" id="crackText">Estimated crack time: —</p>
 
-    <!-- Checklist -->
     <ul class="checklist">
       <li id="length">❌ At least 8 characters</li>
       <li id="lowercase">❌ Lowercase letter</li>
@@ -35,7 +39,6 @@
       <li id="number">❌ Number</li>
       <li id="special">❌ Special character</li>
     </ul>
-
   </div>
 
   <script src="script.js"></script>
